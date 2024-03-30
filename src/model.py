@@ -145,17 +145,20 @@ class UltraGCNPlusPlus(nn.Module):
     def initial_weights(self):
         nn.init.normal_(self.user_embeds.weight, std=self.initial_weight)
         nn.init.normal_(self.item_embeds.weight, std=self.initial_weight)
-        
-        print("start load weight")
-        print(self.user_embeds.weight.shape)
-        print(self.item_embeds.weight.shape)
-        
-        weight_user_embeds = np.load("rec_u_64.npy")
-        weight_item_embeds= np.load("rec_i_64.npy")
-        
-        self.user_embeds.weight = torch.nn.Parameter(torch.from_numpy(weight_user_embeds).cuda().float())
-        self.item_embeds.weight = torch.nn.Parameter(torch.from_numpy(weight_item_embeds).cuda().float())
-        print("end load weight")
+        try:
+            
+            print("start load weight")
+            print(self.user_embeds.weight.shape)
+            print(self.item_embeds.weight.shape)
+            
+            weight_user_embeds = np.load("rec_u_64.npy")
+            weight_item_embeds= np.load("rec_i_64.npy")
+            
+            self.user_embeds.weight = torch.nn.Parameter(torch.from_numpy(weight_user_embeds).cuda().float())
+            self.item_embeds.weight = torch.nn.Parameter(torch.from_numpy(weight_item_embeds).cuda().float())
+            print("end load weight")
+        except:
+            pass
 
     def get_omegas(self, users, pos_items, neg_items):
         device = self.get_device()
