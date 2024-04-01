@@ -119,7 +119,7 @@ class UltraGCN(nn.Module):
     
 class UltraGCNPlusPlus(nn.Module):
     def __init__(self, params, constraint_mat, ii_constraint_mat, ii_neighbor_mat):
-        super(UltraGCN, self).__init__()
+        super(UltraGCNPlusPlus, self).__init__()
         self.user_num = params['user_num']
         self.item_num = params['item_num']
         self.embedding_dim = params['embedding_dim']
