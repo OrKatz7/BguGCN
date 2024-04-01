@@ -13,7 +13,12 @@ import time
 import argparse
 from torch.utils.tensorboard import SummaryWriter
 from tqdm import tqdm
-
+def test_one_batch(X, k):
+    sorted_items = X[0].numpy()
+    groundTrue = X[1]
+    r = getLabel(groundTrue, sorted_items)
+    ret = RecallPrecision_ATk(groundTrue, r, k)
+    return ret['precision'], ret['recall'], NDCGatK_r(groundTrue,r,k)
 def train(model, optimizer, train_loader, test_loader, mask, test_ground_truth_list, interacted_items, params,train_mat): 
     train_mat = train_mat.toarray().astype(bool).astype(int)
     device = params['device']
