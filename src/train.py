@@ -13,6 +13,17 @@ import time
 import argparse
 from torch.utils.tensorboard import SummaryWriter
 from tqdm import tqdm
+
+def getLabel(test_data, pred_data):
+    r = []
+    for i in range(len(test_data)):
+        groundTrue = test_data[i]
+        predictTopK = pred_data[i]
+        pred = list(map(lambda x: x in groundTrue, predictTopK))
+        pred = np.array(pred).astype("float")
+        r.append(pred)
+    return np.array(r).astype('float')
+    
 def test_one_batch(X, k):
     sorted_items = X[0].numpy()
     groundTrue = X[1]
