@@ -35,7 +35,7 @@ cd BGUGCN
 
 3. Train the BGU-GCN model:
 ```bash
-   python train.py --dataset amazon-book --epochs 100 --batch-size 1024 --lr 0.001
+python train.py --dataset amazon-book --epochs 100 --batch-size 1024 --lr 0.001
 ```
 4. Evaluate the trained model:
 ```bash
