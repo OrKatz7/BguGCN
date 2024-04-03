@@ -21,10 +21,14 @@ This repository contains the implementation of BGU-GCN, an enhanced Graph Convol
 ## Usage
 
 1. Clone the repository:
+
+<div style="background-color: black; color: white; padding: 10px;">
+
 ```bash
 git clone https://github.com/OrKatz7/BGUGCN.git
 cd BGUGCN
 ```
+</div>
 3. Prepare the dataset:
 - Download the Amazon-Book and Gowalla datasets
 - Preprocess the data and save it in the appropriate format
