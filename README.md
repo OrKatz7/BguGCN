@@ -29,7 +29,7 @@ git clone https://github.com/OrKatz7/BGUGCN.git
 cd BGUGCN
 ```
 </div>
-3. Prepare the dataset:
+2. Prepare the dataset:
 - Download the Amazon-Book and Gowalla datasets
 - Preprocess the data and save it in the appropriate format
 
