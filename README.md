@@ -34,13 +34,13 @@ cd BGUGCN
 - Preprocess the data and save it in the appropriate format
 
 3. Train the BGU-GCN model:
-
+```bash
    python train.py --dataset amazon-book --epochs 100 --batch-size 1024 --lr 0.001
-
+```
 4. Evaluate the trained model:
-
+```bash
 python evaluate.py --dataset amazon-book --model-path /path/to/trained/model
-
+```
 ## Results
 
 BGU-GCN outperforms existing state-of-the-art collaborative filtering methods, including LightGCN and UltraGCN, on the Amazon-Book and Gowalla datasets:
