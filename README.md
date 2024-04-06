@@ -29,7 +29,7 @@ cd BGUGCN
 
 2. Prepare the dataset:
 - Download the Amazon-Book and Gowalla datasets
-- Preprocess the data and save it in the appropriate format
+- Preprocess the data and save it in the appropriate format, use preprocessing.py to initilaize the similiarty-based embedding matrix.
 
 3. Train the BGU-GCN model:
 ```bash
