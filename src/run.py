@@ -19,6 +19,7 @@ from utils import *
 from data import *
 from model import *
 
+
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
